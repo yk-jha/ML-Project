@@ -6,6 +6,7 @@ import pandas as pd
 from dataclasses import dataclass
 from src.exception import customexception
 from src.logger import logging
+from catboost import CatBoostRegressor
 from sklearn.ensemble import (
     AdaBoostRegressor,
     GradientBoostingRegressor,
@@ -42,6 +43,7 @@ class ModelTrainer:
                 "Linear Regression": LinearRegression(),
                 "XGBRegressor": XGBRegressor(),
                 "AdaBoost Regressor": AdaBoostRegressor(),
+                "CatBoosting Regressor": CatBoostRegressor(verbose=False),
             }
             params={
                 "Decision Tree": {
